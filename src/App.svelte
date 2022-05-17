@@ -1,6 +1,7 @@
 <script lang="ts">
   import DashboardCard from "./lib/atomic/DashboardCard.svelte";
   import data from "./data/data.json";
+  import "./style/global.scss";
 </script>
 
 <div class="component-wrapper">
