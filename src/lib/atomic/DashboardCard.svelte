@@ -41,7 +41,6 @@
 
   .card {
     width: 100%;
-    max-width: 16em;
     background: var(--bg-color) var(--imageUrl) no-repeat top -10px right $inline-padding;
     border-radius: $card-border-radius;
     padding-block-start: 2rem;

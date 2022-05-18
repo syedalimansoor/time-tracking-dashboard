@@ -1,13 +1,18 @@
 <script lang="ts">
   import Dashboard from "./lib/composition/Dashboard.svelte";
   import activities from "./data/data.json";
-
+  import type { User } from "$src/types";
   import "./style/global.scss";
+
+  const user: User = {
+    name: "Jeremy Robson",
+    avatar: "src/assets/image-jeremy.png",
+  };
 </script>
 
 <div class="wrapper">
   <div class="dashboard-wrapper">
-    <Dashboard {activities} />
+    <Dashboard {user} {activities} />
   </div>
 </div>
 

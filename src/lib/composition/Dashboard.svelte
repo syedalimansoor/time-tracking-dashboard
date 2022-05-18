@@ -3,9 +3,13 @@
   import type { Writable } from "svelte/store";
   import { writable } from "svelte/store";
   import DashboardCardGrid from "$src/lib/composition/DashboardCardGrid.svelte";
-  import type { Activity, Timeframe } from "$src/types";
+  import type { Activity, Timeframe, User } from "$src/types";
   import DashboardHeader from "./DashboardHeader.svelte";
 
+  /** Name and avatar of the dashboard user */
+  export let user: User;
+
+  /** Data for the activities that the user has performed */
   export let activities: Activity[];
 
   const timeframe: Writable<Timeframe> = writable<Timeframe>("daily");
@@ -13,7 +17,7 @@
 </script>
 
 <main class="dashboard">
-  <DashboardHeader />
+  <DashboardHeader {user} />
   <DashboardCardGrid {activities} />
 </main>
 
@@ -21,9 +25,11 @@
   .dashboard {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: stretch;
     justify-content: center;
     gap: $grid-gap;
+    max-width: 20em;
+    margin: 0 auto;
 
     @media (min-width: $bp-tablet) {
       flex-direction: row;
