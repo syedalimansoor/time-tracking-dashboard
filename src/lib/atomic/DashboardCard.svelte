@@ -80,7 +80,7 @@
       flex-direction: column;
       justify-content: center;
       gap: 4px;
-      width: 20px;
+      width: 16px;
       grid-column: 2;
       justify-self: end;
     }
