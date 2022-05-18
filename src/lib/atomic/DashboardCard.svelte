@@ -50,7 +50,10 @@
       background: $clr-dark-blue;
       color: white;
       border-radius: $card-border-radius;
-      padding: $block-padding $inline-padding;
+      padding: {
+        block: $block-padding;
+        inline: $inline-padding;
+      }
       display: grid;
       align-items: start;
       row-gap: 0.5em;
@@ -86,6 +89,24 @@
       width: 16px;
       grid-column: 2;
       justify-self: end;
+    }
+
+    @media (min-width: $bp-tablet) {
+      &__content-wrapper {
+        padding: {
+          inline: $inline-padding * 1.5;
+        }
+      }
+
+      &__current-duration {
+        margin-top: 0.4em;
+        font-size: 3rem;
+      }
+
+      &__previous-duration {
+        grid-column: 1;
+        justify-self: start;
+      }
     }
   }
   .work {
