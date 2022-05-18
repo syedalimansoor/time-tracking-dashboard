@@ -37,6 +37,7 @@
 
 <style lang="scss">
   $inline-padding: 1rem;
+  $block-padding: 1.5em;
 
   .card {
     width: 100%;
@@ -49,9 +50,10 @@
       background: $clr-dark-blue;
       color: white;
       border-radius: $card-border-radius;
-      padding: $inline-padding;
+      padding: $block-padding $inline-padding;
       display: grid;
       align-items: start;
+      row-gap: 0.5em;
       height: 100%;
     }
 
@@ -64,6 +66,7 @@
       font-size: xx-large;
       font-weight: $fw-light;
       align-self: end;
+      line-height: 1;
     }
 
     &__previous-duration {

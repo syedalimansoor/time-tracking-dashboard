@@ -21,3 +21,10 @@
     <DashboardCard {activity} />
   {/each}
 </section>
+
+<style lang="scss">
+  .grid {
+    display: grid;
+    gap: $grid-gap;
+  }
+</style>
