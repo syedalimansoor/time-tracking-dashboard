@@ -1,0 +1,23 @@
+<script lang="ts">
+  import type { Activity } from "$src/types";
+  import { onMount } from "svelte";
+  import DashboardCard from "../atomic/DashboardCard.svelte";
+  import Sortable from "sortablejs";
+
+  export let activities: Activity[];
+
+  let grid: HTMLElement;
+
+  onMount(() => {
+    new Sortable(grid, {
+      animation: 200,
+      handle: ".card__grab-handle",
+    });
+  });
+</script>
+
+<section class="grid" bind:this={grid}>
+  {#each activities as activity}
+    <DashboardCard {activity} />
+  {/each}
+</section>

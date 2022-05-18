@@ -14,6 +14,7 @@
     "@sveltejs/vite-plugin-svelte": "^1.0.0-next.30",
     "@tsconfig/svelte": "^2.0.1",
     "@types/jest": "^27.5.1",
+    "@types/sortablejs": "^1.13.0",
     "jest": "^28.1.0",
     "svelte": "^3.44.0",
     "svelte-check": "^2.2.7",
@@ -24,6 +25,7 @@
     "vite": "^2.9.9"
   },
   "dependencies": {
-    "sass": "^1.51.0"
+    "sass": "^1.51.0",
+    "sortablejs": "^1.15.0"
   }
 }

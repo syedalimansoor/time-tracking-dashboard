@@ -2,17 +2,16 @@
   import { setContext } from "svelte";
   import type { Writable } from "svelte/store";
   import { writable } from "svelte/store";
-  import data from "./data/data.json";
-  import DashboardCard from "./lib/atomic/DashboardCard.svelte";
+  import activities from "./data/data.json";
+  import DashboardCardGrid from "./lib/composition/DashboardCardGrid.svelte";
   import "./style/global.scss";
   import type { Timeframe } from "./types";
-
   const timeframe: Writable<Timeframe> = writable<Timeframe>("daily");
   setContext("timeframe", timeframe);
 </script>
 
 <div class="component-wrapper">
-  <DashboardCard activity={data[0]} />
+  <DashboardCardGrid {activities} />
 </div>
 
 <style lang="scss">
