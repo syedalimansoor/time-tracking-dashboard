@@ -13,3 +13,11 @@ export const getPreviousDurationText = (timeframe: Timeframe) => {
       throw new TypeError("Invalid timeframe provided");
   }
 };
+
+/** Convert space separated words to kebab-case, removing all punctuation */
+export const toKebabCase = (sentence: string) => {
+  let words: string[] = Array.from(
+    sentence.matchAll(new RegExp(/\w+/, "g"))
+  ).map((match) => match[0].toLowerCase());
+  return words.join("-");
+};
