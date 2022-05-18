@@ -27,4 +27,16 @@
     display: grid;
     gap: $grid-gap;
   }
+
+  @media (min-width: $bp-mobile) {
+    .grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (min-width: $bp-tablet) {
+    .grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
 </style>
