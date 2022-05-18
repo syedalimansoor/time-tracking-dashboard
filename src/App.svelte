@@ -27,5 +27,11 @@
       block: 4em;
       inline: 1.5em;
     }
+
+    @media (min-width: $bp-mobile) {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
   }
 </style>
