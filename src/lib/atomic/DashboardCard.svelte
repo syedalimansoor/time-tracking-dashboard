@@ -1,26 +1,38 @@
 <script lang="ts">
   import type { Activity, Timeframe } from "$src/types";
-  import { getPreviousDurationText } from "$src/utils";
+  import { getPreviousDurationText, toKebabCase } from "$src/utils";
+  import { getContext } from "svelte";
+  import type { Writable } from "svelte/store";
 
   export let activity: Activity;
+  $: titleKebabCase = toKebabCase(activity.title);
+  $: imageUrl = "src/assets/icon-" + titleKebabCase + ".svg";
 
   /** The current selected timeframe */
-  export let timeframe: Timeframe;
-
-  $: previousDuration = getPreviousDurationText(timeframe);
+  let timeframe: Writable<Timeframe> = getContext("timeframe");
+  $: previousDuration = getPreviousDurationText($timeframe);
 </script>
 
-<article class="card">
-  <h2 class="card__title">
-    {activity.title}
-  </h2>
-  <strong class="card__current-duration">
-    <time>{activity.timeframes[timeframe].current}hrs</time>
-  </strong>
-  <p class="card__previous-duration">
-    {previousDuration} &mdash;
-    <time>{activity.timeframes[timeframe].previous}hrs</time>
-  </p>
+<article
+  class={["card", titleKebabCase].join(" ")}
+  style:--imageUrl={`url(${imageUrl})`}
+>
+  <div class="card__content-wrapper">
+    <h2 class="card__title">
+      {activity.title}
+    </h2>
+    <div class="card__grab-handle" role="button">
+      <img src="src/assets/icon-ellipsis.svg" alt="" />
+      <img src="src/assets/icon-ellipsis.svg" alt="" />
+    </div>
+    <strong class="card__current-duration">
+      <time>{activity.timeframes[$timeframe].current}hrs</time>
+    </strong>
+    <p class="card__previous-duration">
+      {previousDuration} &mdash;
+      <time>{activity.timeframes[$timeframe].previous}hrs</time>
+    </p>
+  </div>
 </article>
 
 <style lang="scss">
