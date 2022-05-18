@@ -42,13 +42,13 @@
     width: 100%;
     height: 100%;
     background: var(--bg-color) var(--imageUrl) no-repeat top -10px right $inline-padding;
-    border-radius: $border-radius;
+    border-radius: $card-border-radius;
     padding-block-start: 2rem;
 
     &__content-wrapper {
       background: $clr-dark-blue;
       color: white;
-      border-radius: $border-radius;
+      border-radius: $card-border-radius;
       padding: $inline-padding;
       display: grid;
       align-items: start;
