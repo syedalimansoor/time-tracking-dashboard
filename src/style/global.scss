@@ -6,6 +6,10 @@
   box-sizing: border-box;
 }
 
+img {
+  max-width: 100%;
+}
+
 :root {
   font-family: $ff-reg;
   font-size: $fs-reg;
