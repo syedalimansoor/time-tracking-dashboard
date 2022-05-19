@@ -110,6 +110,7 @@
       &__previous-duration {
         grid-column: 1;
         justify-self: start;
+        text-align: left;
       }
     }
   }
