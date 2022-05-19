@@ -47,8 +47,13 @@
       flex-direction: column;
       align-items: start;
 
+      &__avatar {
+        max-width: 4em;
+      }
+
       &__user-name {
-        font-size: 1.8rem;
+        font-size: 2.2rem;
+        margin-top: 0.1em;
       }
     }
   }
