@@ -45,11 +45,15 @@
       <img src={ellipsis} alt="" />
     </div>
     <strong class="card__current-duration">
-      <time>{activity.timeframes[$timeframe].current}hrs</time>
+      <time datetime={`PT${activity.timeframes[$timeframe].current}H`}
+        >{activity.timeframes[$timeframe].current}hrs</time
+      >
     </strong>
     <p class="card__previous-duration">
       {previousDuration} &mdash;
-      <time>{activity.timeframes[$timeframe].previous}hrs</time>
+      <time datetime={`PT${activity.timeframes[$timeframe].previous}H`}
+        >{activity.timeframes[$timeframe].previous}hrs</time
+      >
     </p>
   </div>
 </article>
