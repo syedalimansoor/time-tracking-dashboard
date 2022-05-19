@@ -28,8 +28,13 @@
     align-items: stretch;
     justify-content: center;
     gap: $grid-gap;
+    width: 100%;
     max-width: 20em;
     margin: 0 auto;
+
+    @media (min-width: $bp-mobile) {
+      max-width: 30em;
+    }
 
     @media (min-width: $bp-tablet) {
       flex-direction: row;
