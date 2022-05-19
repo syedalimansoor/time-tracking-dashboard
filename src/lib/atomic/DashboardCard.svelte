@@ -56,6 +56,7 @@
       display: grid;
       align-items: start;
       row-gap: 0.5em;
+      column-gap: 0.5em;
       height: 100%;
     }
 
@@ -67,7 +68,6 @@
     &__current-duration {
       font-size: xx-large;
       font-weight: $fw-light;
-      align-self: baseline;
       line-height: 1;
     }
 
@@ -77,7 +77,7 @@
       text-align: right;
       color: $clr-pale-blue;
       grid-column: 2;
-      align-self: baseline;
+      align-self: center;
     }
 
     &__grab-handle {
