@@ -5,7 +5,7 @@
   import type { Writable } from "svelte/store";
   export let activity: Activity;
   $: titleKebabCase = toKebabCase(activity.title);
-  $: imageUrl = "src/assets/icon-" + titleKebabCase + ".svg";
+  $: imageUrl = "/icon-" + titleKebabCase + ".svg";
 
   /** The current selected timeframe */
   let timeframe: Writable<Timeframe> = getContext("timeframe");
@@ -21,8 +21,8 @@
       {activity.title}
     </h2>
     <div class="card__grab-handle" role="button">
-      <img src="src/assets/icon-ellipsis.svg" alt="" />
-      <img src="src/assets/icon-ellipsis.svg" alt="" />
+      <img src="/icon-ellipsis.svg" alt="" />
+      <img src="/icon-ellipsis.svg" alt="" />
     </div>
     <strong class="card__current-duration">
       <time>{activity.timeframes[$timeframe].current}hrs</time>

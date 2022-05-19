@@ -6,7 +6,7 @@
 
   const user: User = {
     name: "Jeremy Robson",
-    avatar: "src/assets/image-jeremy.png",
+    avatar: "/image-jeremy.png",
   };
 </script>
 
