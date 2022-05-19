@@ -88,6 +88,11 @@
       width: 16px;
       grid-column: 2;
       justify-self: end;
+      cursor: grab;
+
+      &:active {
+        cursor: grabbing;
+      }
     }
 
     @media (min-width: $bp-tablet) {
