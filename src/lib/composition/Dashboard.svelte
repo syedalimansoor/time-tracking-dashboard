@@ -37,6 +37,7 @@
     }
 
     @media (min-width: $bp-tablet) {
+      max-width: 60em;
       flex-direction: row;
     }
   }

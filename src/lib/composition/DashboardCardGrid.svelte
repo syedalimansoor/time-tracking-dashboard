@@ -26,16 +26,12 @@
   .grid {
     display: grid;
     gap: $grid-gap;
-  }
 
-  @media (min-width: $bp-mobile) {
-    .grid {
+    @media (min-width: $bp-mobile) {
       grid-template-columns: repeat(2, 1fr);
     }
-  }
 
-  @media (min-width: $bp-tablet) {
-    .grid {
+    @media (min-width: $bp-tablet) {
       grid-template-columns: repeat(3, 1fr);
     }
   }
