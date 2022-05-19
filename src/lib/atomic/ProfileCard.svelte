@@ -21,6 +21,7 @@
     display: flex;
     justify-content: start;
     align-items: center;
+    flex-grow: 1;
     gap: 1em;
 
     &__avatar {
@@ -40,6 +41,15 @@
       font-size: 1.4rem;
       font-weight: $fw-light;
       color: white;
+    }
+
+    @media (min-width: $bp-tablet) {
+      flex-direction: column;
+      align-items: start;
+
+      &__user-name {
+        font-size: 1.8rem;
+      }
     }
   }
 </style>

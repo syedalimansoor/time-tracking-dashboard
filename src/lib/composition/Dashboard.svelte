@@ -23,8 +23,8 @@
 
 <style lang="scss">
   .dashboard {
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    /* flex-direction: column; */
     align-items: stretch;
     justify-content: center;
     gap: $grid-gap;
@@ -37,8 +37,9 @@
     }
 
     @media (min-width: $bp-tablet) {
-      max-width: 60em;
-      flex-direction: row;
+      max-width: 50em;
+      /* flex-direction: row; */
+      grid-template-columns: 1fr 3fr;
     }
   }
 </style>

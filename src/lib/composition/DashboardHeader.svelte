@@ -15,5 +15,7 @@
   .header {
     background-color: $clr-dark-blue;
     border-radius: $card-border-radius;
+    display: flex;
+    flex-direction: column;
   }
 </style>

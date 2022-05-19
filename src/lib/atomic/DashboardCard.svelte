@@ -105,10 +105,11 @@
       &__current-duration {
         margin-top: 0.4em;
         font-size: 3rem;
+        grid-column: span 2;
       }
 
       &__previous-duration {
-        grid-column: 1;
+        grid-column: span 2;
         justify-self: start;
         text-align: left;
       }

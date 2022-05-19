@@ -68,5 +68,11 @@
         color: white;
       }
     }
+
+    @media (min-width: $bp-tablet) {
+      padding: 1.6em;
+      flex-direction: column;
+      gap: 1em;
+    }
   }
 </style>
