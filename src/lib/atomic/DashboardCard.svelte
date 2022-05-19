@@ -67,7 +67,7 @@
     &__current-duration {
       font-size: xx-large;
       font-weight: $fw-light;
-      align-self: end;
+      align-self: baseline;
       line-height: 1;
     }
 
@@ -77,7 +77,7 @@
       text-align: right;
       color: $clr-pale-blue;
       grid-column: 2;
-      align-self: end;
+      align-self: baseline;
     }
 
     &__grab-handle {
