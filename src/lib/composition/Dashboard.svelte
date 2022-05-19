@@ -14,7 +14,22 @@
   /** Data for the activities that the user has performed */
   export let activities: Activity[];
 
-  const timeframe: Writable<Timeframe> = writable<Timeframe>("daily");
+  const prevTimeframe = localStorage.getItem("timeframe") as Timeframe;
+
+  const timeframe: Writable<Timeframe> = (() => {
+    const { subscribe, set, update } = writable<Timeframe>(
+      prevTimeframe || "daily"
+    );
+    const setAndUpdateLocalStorage = (value: Timeframe) => {
+      set(value);
+      localStorage.setItem("timeframe", value);
+    };
+    return {
+      subscribe,
+      set: setAndUpdateLocalStorage,
+      update,
+    };
+  })();
   setContext("timeframe", timeframe);
 </script>
 
