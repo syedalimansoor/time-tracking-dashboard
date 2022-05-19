@@ -10,4 +10,5 @@ export default defineConfig({
       $src: resolve("./src"),
     },
   },
+  base: "/time-tracking-dashboard/",
 });

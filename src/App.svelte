@@ -4,9 +4,11 @@
   import type { User } from "$src/types";
   import "./style/global.scss";
 
+  import avatar from "$src/assets/image-jeremy.png";
+
   const user: User = {
     name: "Jeremy Robson",
-    avatar: "/image-jeremy.png",
+    avatar,
   };
 </script>
 

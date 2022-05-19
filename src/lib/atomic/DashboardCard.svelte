@@ -3,9 +3,29 @@
   import { getPreviousDurationText, toKebabCase } from "$src/utils";
   import { getContext } from "svelte";
   import type { Writable } from "svelte/store";
+
+  //#region import assets
+  import ellipsis from "$src/assets/icon-ellipsis.svg";
+  import exercise from "$src/assets/icon-exercise.svg";
+  import play from "$src/assets/icon-play.svg";
+  import selfCare from "$src/assets/icon-self-care.svg";
+  import social from "$src/assets/icon-social.svg";
+  import study from "$src/assets/icon-study.svg";
+  import work from "$src/assets/icon-work.svg";
+
+  const imgs = {
+    exercise,
+    play,
+    "self-care": selfCare,
+    social,
+    study,
+    work,
+  };
+  //#endregion import assets
+
   export let activity: Activity;
   $: titleKebabCase = toKebabCase(activity.title);
-  $: imageUrl = "/icon-" + titleKebabCase + ".svg";
+  $: imageUrl = imgs[titleKebabCase];
 
   /** The current selected timeframe */
   let timeframe: Writable<Timeframe> = getContext("timeframe");
@@ -21,8 +41,8 @@
       {activity.title}
     </h2>
     <div class="card__grab-handle" role="button">
-      <img src="/icon-ellipsis.svg" alt="" />
-      <img src="/icon-ellipsis.svg" alt="" />
+      <img src={ellipsis} alt="" />
+      <img src={ellipsis} alt="" />
     </div>
     <strong class="card__current-duration">
       <time>{activity.timeframes[$timeframe].current}hrs</time>
