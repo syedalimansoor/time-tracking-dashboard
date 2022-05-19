@@ -51,6 +51,12 @@
     &__label {
       font-weight: $fw-light;
       color: $clr-desaturated-blue;
+      cursor: pointer;
+      transition: color 100ms ease;
+
+      &:hover {
+        color: $clr-pale-blue;
+      }
     }
 
     &__optn {
