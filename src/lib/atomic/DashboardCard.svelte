@@ -3,7 +3,6 @@
   import { getPreviousDurationText, toKebabCase } from "$src/utils";
   import { getContext } from "svelte";
   import type { Writable } from "svelte/store";
-
   export let activity: Activity;
   $: titleKebabCase = toKebabCase(activity.title);
   $: imageUrl = "src/assets/icon-" + titleKebabCase + ".svg";

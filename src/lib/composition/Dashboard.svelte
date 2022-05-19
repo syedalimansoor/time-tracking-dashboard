@@ -2,6 +2,8 @@
   import { setContext } from "svelte";
   import type { Writable } from "svelte/store";
   import { writable } from "svelte/store";
+  import { fly } from "svelte/transition";
+  import { expoOut } from "svelte/easing";
   import DashboardCardGrid from "$src/lib/composition/DashboardCardGrid.svelte";
   import type { Activity, Timeframe, User } from "$src/types";
   import DashboardHeader from "./DashboardHeader.svelte";
@@ -16,7 +18,7 @@
   setContext("timeframe", timeframe);
 </script>
 
-<main class="dashboard">
+<main class="dashboard" in:fly={{ duration: 1000, easing: expoOut, y: 100 }}>
   <DashboardHeader {user} />
   <DashboardCardGrid {activities} />
 </main>
