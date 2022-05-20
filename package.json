@@ -28,6 +28,7 @@
     "vite": "^2.9.9"
   },
   "dependencies": {
+    "countup.js": "^2.2.0",
     "sass": "^1.51.0",
     "sortablejs": "^1.15.0"
   }

@@ -1,8 +1,9 @@
 <script lang="ts">
   import type { Activity, Timeframe } from "$src/types";
   import { getPreviousDurationText, toKebabCase } from "$src/utils";
-  import { getContext } from "svelte";
+  import { getContext, onMount } from "svelte";
   import type { Writable } from "svelte/store";
+  import { CountUp } from "countup.js";
 
   //#region import assets
   import ellipsis from "$src/assets/icon-ellipsis.svg";
@@ -29,7 +30,34 @@
 
   /** The current selected timeframe */
   let timeframe: Writable<Timeframe> = getContext("timeframe");
-  $: previousDuration = getPreviousDurationText($timeframe);
+  $: previousDurationText = getPreviousDurationText($timeframe);
+  $: currentDuration = activity.timeframes[$timeframe].current;
+  $: previousDuration = activity.timeframes[$timeframe].previous;
+
+  let currentDurationEl: HTMLSpanElement;
+  let previousDurationEl: HTMLSpanElement;
+
+  $: {
+    if (currentDurationEl) {
+      let currentCountUp = new CountUp(currentDurationEl, currentDuration);
+      if (!currentCountUp.error) {
+        currentCountUp.start();
+      } else {
+        console.error(currentCountUp.error);
+      }
+    }
+  }
+
+  $: {
+    if (previousDurationEl) {
+      let previousCountUp = new CountUp(previousDurationEl, previousDuration);
+      if (!previousCountUp.error) {
+        previousCountUp.start();
+      } else {
+        console.error(previousCountUp.error);
+      }
+    }
+  }
 </script>
 
 <article
@@ -45,14 +73,14 @@
       <img src={ellipsis} alt="" />
     </div>
     <strong class="card__current-duration">
-      <time datetime={`PT${activity.timeframes[$timeframe].current}H`}
-        >{activity.timeframes[$timeframe].current}hrs</time
+      <time datetime={`PT${currentDuration}H`}
+        ><span bind:this={currentDurationEl} />hrs</time
       >
     </strong>
     <p class="card__previous-duration">
-      {previousDuration} &mdash;
-      <time datetime={`PT${activity.timeframes[$timeframe].previous}H`}
-        >{activity.timeframes[$timeframe].previous}hrs</time
+      {previousDurationText} &mdash;
+      <time datetime={`PT${previousDuration}H`}
+        ><span bind:this={previousDurationEl} />hrs</time
       >
     </p>
   </div>
