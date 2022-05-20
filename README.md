@@ -29,4 +29,4 @@ View the app live **[here](https://alimansoor-create.github.io/time-tracking-das
 
 This was a relatively easy challenge, and I did not face any problems apart from a little struggle in making the styles responsive. A quick refresher on CSS Grid and Flexbox layouts. Had fun.
 
-Please do leave your reviews [here]()!
+Please do leave your reviews [here](https://www.frontendmentor.io/solutions/time-tracking-dashboard-svelte-ts-sass-LSq9Sh9D54)!
